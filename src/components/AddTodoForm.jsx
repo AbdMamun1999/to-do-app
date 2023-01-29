@@ -1,17 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import { toast } from "react-hot-toast";
 import { FaPlus } from "react-icons/fa";
-import { useDispatch } from "react-redux";
-import { addTodo } from "../features/todo/todoSlice";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addTodo,
+  setCurrentTodo,
+  updateTodo,
+} from "../features/todo/todoSlice";
 
 const AddTodoForm = ({ todoName, setTodoName }) => {
-  const { currentTode, setcurrentTode } = useState("");
+  const { currentTodo } = useSelector((state) => state.todo);
   const dispatch = useDispatch();
 
   const handleAddTodo = () => {
     const randomNumber = Math.floor(Math.random() * 1000) + Date.now();
 
-    const task = {
+    const todo = {
       _id: randomNumber,
       todoName: todoName,
       completed: false,
@@ -20,8 +24,23 @@ const AddTodoForm = ({ todoName, setTodoName }) => {
     if (todoName.trim().length === 0) {
       toast.error("please write a task name");
     } else {
-      dispatch(addTodo(task));
-      setTodoName("")
+      dispatch(addTodo(todo));
+      setTodoName("");
+    }
+  };
+
+  const handleUpdateTodo = () => {
+    const todo = {
+      ...currentTodo,
+      todoName: todoName,
+    };
+
+    if (todoName.trim().length === 0) {
+      toast.error("please write a task name");
+    } else {
+      dispatch(updateTodo(todo));
+      dispatch(setCurrentTodo());
+      setTodoName("");
     }
   };
 
@@ -35,8 +54,11 @@ const AddTodoForm = ({ todoName, setTodoName }) => {
           value={todoName}
           onChange={(e) => setTodoName(e.target.value)}
         />
-        {currentTode ? (
-          <button className="bg-primary rounded text-white border-2 px-4 py-2 border-primary">
+        {currentTodo ? (
+          <button
+            onClick={handleUpdateTodo}
+            className="bg-primary rounded text-white border-2 px-4 py-2 border-primary"
+          >
             <FaPlus />
           </button>
         ) : (

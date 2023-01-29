@@ -42,7 +42,7 @@ const Todo = () => {
       <div className="border-t mt-3">
         {/* <p>You don't have task here</p> */}
         {todos.map((todo) => (
-          <TodoRow key={todo._id} todo={todo} />
+          <TodoRow key={todo._id} todo={todo} setTodoName={setTodoName} />
         ))}
       </div>
     </div>

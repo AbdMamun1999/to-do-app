@@ -3,10 +3,15 @@ import { CgRadioCheck } from "react-icons/cg";
 import { FiEdit } from "react-icons/fi";
 import { FaTrash } from "react-icons/fa";
 import { useDispatch } from "react-redux";
-import { removeTodo } from "../features/todo/todoSlice";
+import { removeTodo, setCurrentTodo } from "../features/todo/todoSlice";
 
-const TodoRow = ({ todo }) => {
+const TodoRow = ({ todo,setTodoName }) => {
   const dispatch = useDispatch();
+
+  const handleCurrentTodo = (data) => {
+    dispatch(setCurrentTodo(data));
+    setTodoName(data.todoName);
+  };
 
   return (
     <div className="flex flex-row justify-between items-center mt-3 border-b pb-3">
@@ -18,7 +23,7 @@ const TodoRow = ({ todo }) => {
       </div>
 
       <div>
-        <button className="mr-4">
+        <button onClick={() => handleCurrentTodo(todo)} className="mr-4">
           <FiEdit />
         </button>
         <button onClick={() => dispatch(removeTodo(todo._id))}>
