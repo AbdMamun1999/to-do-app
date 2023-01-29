@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import AddTodoForm from "./AddTodoForm";
 import TodoRow from "./TodoRow";
 
 const Todo = () => {
   const [todoName, setTodoName] = useState("");
+  const { todos, sortKey } = useSelector((state) => state.todo);
 
   return (
     <div className="w-[400px] min-h-[550px] p-8 rounded-lg border-2 bg-white">
@@ -21,8 +23,10 @@ const Todo = () => {
         </button>
       </div>
       <div className="border-t mt-3">
-        {/* <p className="mt-3">You don't have any task here</p> */}
-        <TodoRow />
+        {/* <p>You don't have task here</p> */}
+        {todos.map((todo) => (
+          <TodoRow key={todo._id} todo={todo} />
+        ))}
       </div>
     </div>
   );

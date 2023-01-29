@@ -21,6 +21,7 @@ const AddTodoForm = ({ todoName, setTodoName }) => {
       toast.error("please write a task name");
     } else {
       dispatch(addTodo(task));
+      setTodoName("")
     }
   };
 
