@@ -1,11 +1,28 @@
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setTodo } from "../features/todo/todoSlice";
 import AddTodoForm from "./AddTodoForm";
 import TodoRow from "./TodoRow";
 
 const Todo = () => {
   const [todoName, setTodoName] = useState("");
   const { todos, sortKey } = useSelector((state) => state.todo);
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    if (todos.length) {
+      const data = JSON.stringify(todos);
+      localStorage.setItem("todos", data);
+    }
+  }, [todos]);
+
+  useEffect(() => {
+    const data = localStorage.getItem("todos");
+    const dataParse = JSON.parse(data);
+    if (dataParse.length) {
+      dispatch(setTodo(dataParse));
+    }
+  }, []);
 
   return (
     <div className="w-[400px] min-h-[550px] p-8 rounded-lg border-2 bg-white">
