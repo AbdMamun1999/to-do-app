@@ -22,9 +22,9 @@ This app is built using React.js, Tailwind css, Redux-tookit,
 This app is built using vite
 
 # How to use 
- 1. Clone or download the repository.
- 2. to install the dependencies.
-        yarn install
- 3. to start the development server.
+### Clone or download the repository.
+### to install the dependencies.
+       yarn install
+ ### to start the development server.
         yarn dev
- 4. Go to http://localhost:3000 in your browser to view the app.
+ ### Go to http://localhost:3000 in your browser to view the app.
