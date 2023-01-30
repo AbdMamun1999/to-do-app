@@ -18,7 +18,7 @@ const Todo = () => {
   };
 
   useEffect(() => {
-    if (todos.length) {
+    if (todos?.length) {
       const data = JSON.stringify(todos);
       localStorage.setItem("todos", data);
     }
@@ -27,14 +27,14 @@ const Todo = () => {
   useEffect(() => {
     const data = localStorage.getItem("todos");
     const dataParse = JSON.parse(data);
-    if (dataParse.length) {
+    if (dataParse?.length) {
       dispatch(setTodo(dataParse));
     }
   }, []);
 
   let content;
 
-  if (todos.length && sortKey) {
+  if (todos?.length && sortKey) {
     content = todos
       .filter((todo) => {
         if (sortKey === "All") return true;
@@ -84,7 +84,7 @@ const Todo = () => {
         </button>
         <button
           onClick={handleRemoveAllToto}
-          className="bg-primary px-2 py-1 rounded text-white"
+          className="bg-primary border-primary px-2 py-1 rounded text-white"
         >
           Clear All
         </button>

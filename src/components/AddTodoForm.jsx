@@ -46,9 +46,9 @@ const AddTodoForm = ({ todoName, setTodoName }) => {
 
   return (
     <div>
-      <div className="flex flex-row gap-x-2">
+      <div className="flex flex-row justify-between gap-x-2">
         <input
-          className="flex-1 border-2 p-2 outline-none rounded text-primary focus:border-primary"
+          className="w-full border-2 p-2 outline-none rounded text-primary focus:border-primary"
           type="text"
           placeholder="Enter a todo name"
           value={todoName}
