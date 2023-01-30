@@ -35,7 +35,7 @@ const todoSlice = createSlice({
       );
       state.todos[indexTodo].completed = !state.todos[indexTodo].completed;
     },
-    removeAllTodo: (state) => {
+    removeAllTodo: (state, action) => {
       state.todos = [];
       localStorage.setItem("todos", JSON.stringify(state.todos));
     },

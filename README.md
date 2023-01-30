@@ -11,3 +11,4 @@
     * ___All:___ Displays all tasks, both completed and pending.
     * ___Pending:___ Only displays tasks that have not been marked as completed.
     * ___Completed:___ Only displays tasks that have been marked as completed.
+* __Option to Clear All Task:__ Users can also have an option to clear all task at once.
