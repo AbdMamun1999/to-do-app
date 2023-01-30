@@ -29,10 +29,31 @@ const todoSlice = createSlice({
     setCurrentTodo: (state, action) => {
       state.currentTodo = action.payload;
     },
+    toggleCompleted: (state, action) => {
+      const indexTodo = state.todos.findIndex(
+        (todo) => todo._id === action.payload
+      );
+      state.todos[indexTodo].completed = !state.todos[indexTodo].completed;
+    },
+    removeAllTodo: (state) => {
+      state.todos = [];
+      localStorage.setItem("todos", JSON.stringify(state.todos));
+    },
+    sortTodo: (state, action) => {
+      state.sortKey = action.payload;
+    },
   },
 });
 
-export const { addTodo, setTodo, removeTodo, updateTodo, setCurrentTodo } =
-  todoSlice.actions;
+export const {
+  addTodo,
+  setTodo,
+  removeTodo,
+  updateTodo,
+  setCurrentTodo,
+  toggleCompleted,
+  removeAllTodo,
+  sortTodo,
+} = todoSlice.actions;
 
 export default todoSlice.reducer;
