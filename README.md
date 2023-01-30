@@ -16,10 +16,10 @@
 
 
 # Technologies Used
-This app is built using React.js, Tailwind css, Redux-tookit,
+    This app is built using React.js, Tailwind css, Redux-tookit,
 
-# using tool
-This app is built using vite
+# Using tool
+    This app is built using vite
 
 # How to use 
  1. Clone or download the repository.
