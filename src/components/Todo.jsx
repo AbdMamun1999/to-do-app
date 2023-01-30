@@ -47,7 +47,7 @@ const Todo = () => {
   }
 
   return (
-    <div className="w-[400px] min-h-[550px] p-8 rounded-lg border-2 bg-white">
+    <div className="w-11/12 sm:w-4/5 md:w-7/12 lg:w-1/2 min-h-[550px] p-8 rounded-lg border-2 bg-white">
       <div>
         <h1 className="mb-2 text-primary font-semibold text-xl">TO DO APP</h1>
       </div>
