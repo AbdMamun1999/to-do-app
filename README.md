@@ -16,13 +16,15 @@
 
 
 # Technologies Used
-    This app is built using React.js, Tailwind css, Redux-tookit,
+This app is built using React.js, Tailwind css, Redux-tookit,
 
 # Using tool
-    This app is built using vite
+This app is built using vite
 
 # How to use 
  1. Clone or download the repository.
- 2. Run yarn to install the dependencies.
- 3. Run yarn dev to start the development server.
+ 2. to install the dependencies.
+        yarn install
+ 3. to start the development server.
+        yarn dev
  4. Go to http://localhost:3000 in your browser to view the app.
