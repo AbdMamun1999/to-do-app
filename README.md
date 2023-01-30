@@ -12,3 +12,17 @@
     * ___Pending:___ Only displays tasks that have not been marked as completed.
     * ___Completed:___ Only displays tasks that have been marked as completed.
 * __Option to Clear All Task:__ Users can also have an option to clear all task at once.
+
+
+
+# Technologies Used
+This app is built using React.js, Tailwind css, Redux-tookit,
+
+# using tool
+This app is built using vite
+
+# How to use 
+ 1. Clone or download the repository.
+ 2. Run yarn to install the dependencies.
+ 3. Run yarn dev to start the development server.
+ 4. Go to http://localhost:3000 in your browser to view the app.
