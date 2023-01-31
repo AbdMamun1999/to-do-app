@@ -24,7 +24,7 @@ This app is built using vite
 # How to use 
 ### Clone or download the repository.
 ### to install the dependencies.
-       yarn install
+       yarn 
  ### to start the development server.
         yarn dev
  ### Go to http://localhost:3000 in your browser to view the app.
