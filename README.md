@@ -16,7 +16,7 @@
 
 
 # Technologies Used
-This app is built using React.js, Tailwind css, Redux-tookit,
+This app is built using React.js, Tailwind css, Redux-tookit,React-icons and react-hot-toast
 
 # Using tool
 This app is built using vite
