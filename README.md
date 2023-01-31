@@ -24,7 +24,11 @@ This app is built using vite
 # How to use 
 ### Clone or download the repository.
 ### to install the dependencies.
-       yarn Or npm install
+       yarn 
+       Or 
+       npm install
  ### to start the development server.
-        yarn dev or npm run dev
+        yarn dev 
+        or 
+        npm run dev
  ### Go to http://localhost:3000 in your browser to view the app.
